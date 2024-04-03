@@ -19,9 +19,8 @@ public class Main {
 
         for (char operand : operands) {
             int count = 0;
-            for (char c : operands) {
-                count += input.length() - input.replace(String.valueOf(c), "").length();//calculate amount of acceptable operands
-            }
+                count = input.length() - input.replace(String.valueOf(operand), "").length();//calculate amount of acceptable operands
+
 
             if (count == 1) {
                 String splitter = String.format("\\%s", operand);
@@ -49,7 +48,7 @@ public class Main {
                         case "\\+" -> nums[0] + nums[1];
                         case "\\-" -> nums[0] - nums[1];
                         case "\\*" -> nums[0] * nums[1];
-                        case "\\/" -> nums[0] * nums[1];
+                        case "\\/" -> nums[0] / nums[1];
                         default -> throw new IllegalStateException("Unexpected value: " + splitter);
                     };
                     if (roman) {
@@ -64,7 +63,7 @@ public class Main {
                     throw new Exception("throws Exception");
                 }
             }
-            else throw new Exception("throws Exception");
+
 
 
         }
